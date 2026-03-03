@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inmobiliaria Flores</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --negro:#222;
+    --gris:#666;
+    --rojo:#9b2c2c;
+    --arena:#f7f6f3;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background:var(--arena);
+    color:var(--negro);
+    line-height:1.7;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:30px 10%;
+    background:white;
+    border-bottom:1px solid #eee;
+}
+
+.logo{
+    font-family:'Noto Serif JP', serif;
+    font-size:22px;
+    letter-spacing:2px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:40px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--negro);
+    font-size:14px;
+    letter-spacing:2px;
+}
+
+nav a:hover{
+    color:var(--rojo);
+}
+
+/* HERO */
+.hero{
+    height:90vh;
+    background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero-content{
+    position:relative;
+    max-width:700px;
+}
+
+.hero h1{
+    font-family:'Noto Serif JP', serif;
+    font-size:48px;
+    font-weight:600;
+    letter-spacing:3px;
+}
+
+.hero p{
+    margin-top:20px;
+    font-weight:300;
+    font-size:18px;
+    color:#444;
+}
+
+.hero button{
+    margin-top:40px;
+    padding:12px 35px;
+    border:1px solid var(--negro);
+    background:transparent;
+    color:var(--negro);
+    cursor:pointer;
+    letter-spacing:2px;
+    transition:0.3s;
+}
+
+.hero button:hover{
+    background:var(--negro);
+    color:white;
+}
+
+/* SECCIÓN */
+.section{
+    padding:120px 10%;
+}
+
+.section-title{
+    font-family:'Noto Serif JP', serif;
+    font-size:30px;
+    margin-bottom:70px;
+    border-left:3px solid var(--rojo);
+    padding-left:15px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:50px;
+}
+
+.card{
+    background:white;
+    transition:0.4s;
+}
+
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:35px;
+}
+
+.card-content h3{
+    font-family:'Noto Serif JP', serif;
+    margin-bottom:10px;
+}
+
+.precio{
+    margin-top:20px;
+    color:var(--rojo);
+    font-weight:500;
+    letter-spacing:1px;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:60px 20px;
+    font-size:14px;
+    color:var(--gris);
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">Inmobiliaria Flores</div>
+    <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Propiedades</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Equilibrio y Patrimonio</h1>
+        <p>Propiedades seleccionadas con visión y precisión.</p>
+        <button>Explorar propiedades</button>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-title">Propiedades Destacadas</div>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c">
+            <div class="card-content">
+                <h3>Residencia Contemporánea</h3>
+                <p>3 habitaciones · 2 baños · 210m²</p>
+                <div class="precio">$380,000 USD</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
+            <div class="card-content">
+                <h3>Penthouse Minimalista</h3>
+                <p>Vista panorámica · 2 suites · 190m²</p>
+                <div class="precio">$520,000 USD</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 Inmobiliaria Flores — Diseño minimalista
+</footer>
+
+</body>
+</html
