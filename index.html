@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inmobiliaria Flores</title>
+<title>Página | Inmobiliaria Flores</title>
 <link rel="icon" type="image/png" href="favicon.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -49,8 +49,12 @@ nav{
 }
 
 .logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
     font-family:'Noto Serif JP', serif;
     font-size:22px;
+    font-weight:600;
     letter-spacing:2px;
 }
 
@@ -95,19 +99,22 @@ nav a.active{
     max-width:700px;
 }
 
-.hero h1{
+.hero h1,
+.hero p{
+    color: var(--arena);
     font-family:'Noto Serif JP', serif;
+}
+
+.hero h1{
     font-size:48px;
     font-weight:600;
     letter-spacing:3px;
-    color: var(--arena); /* TEXTO ARENA */
 }
 
 .hero p{
     margin-top:20px;
     font-weight:300;
     font-size:18px;
-    color: var(--arena); /* TEXTO ARENA */
 }
 
 .hero button{
@@ -126,7 +133,7 @@ nav a.active{
     color:white;
 }
 
-/* SECCIÓN */
+/* SECCIONES */
 .section{
     padding:120px 10%;
 }
@@ -185,7 +192,6 @@ footer{
 
 /* RESPONSIVE */
 @media(max-width:768px){
-
     nav ul{
         position:absolute;
         top:80px;
@@ -199,15 +205,12 @@ footer{
         display:none;
         border-top:1px solid #eee;
     }
-
     nav ul.active{
         display:flex;
     }
-
     .menu-toggle{
         display:block;
     }
-
     .hero h1{
         font-size:34px;
     }
@@ -217,55 +220,30 @@ footer{
 <body>
 
 <nav>
-    <div class="logo">Inmobiliaria Flores</div>
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo" style="height:45px;">
+        Inmobiliaria Flores
+    </a>
     <div class="menu-toggle" id="menu-toggle">☰</div>
     <ul id="menu">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#propiedades">Propiedades</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="propiedades.html">Propiedades</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
     </ul>
 </nav>
 
 <section class="hero" id="inicio">
     <div class="hero-content">
-        <h1>Inmobiliaria Flores</h1>
-        <p>Equilibrio y Patrimonio</p>
-        <button onclick="document.getElementById('propiedades').scrollIntoView()">Explorar propiedades</button>
+        <h1>Página Título</h1>
+        <p>Subtítulo o descripción</p>
+        <button onclick="document.getElementById('propiedades')?.scrollIntoView()">Explorar propiedades</button>
     </div>
 </section>
 
 <section class="section" id="propiedades">
-    <div class="section-title">Propiedades Destacadas</div>
-    <div class="grid">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c">
-            <div class="card-content">
-                <h3>Residencia Contemporánea</h3>
-                <p>3 habitaciones · 2 baños · 210m²</p>
-                <div class="precio">$380,000 USD</div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
-            <div class="card-content">
-                <h3>Penthouse Minimalista</h3>
-                <p>Vista panorámica · 2 suites · 190m²</p>
-                <div class="precio">$520,000 USD</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section" id="nosotros">
-    <div class="section-title">Nosotros</div>
-    <p>En Inmobiliaria Flores ofrecemos propiedades seleccionadas con visión estratégica y enfoque patrimonial.</p>
-</section>
-
-<section class="section" id="contacto">
-    <div class="section-title">Contacto</div>
-    <p>Email: contacto@inmobiliariaflores.cl</p>
-    <p>Teléfono: +56 9 1234 5678</p>
+    <div class="section-title">Sección Principal</div>
+    <p>Contenido principal de la página. Aquí puedes poner lo que corresponda a esta sección.</p>
 </section>
 
 <footer>
@@ -277,9 +255,7 @@ const toggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu");
 const links = document.querySelectorAll("nav a");
 
-toggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
-});
+toggle.addEventListener("click", () => menu.classList.toggle("active"));
 
 links.forEach(link=>{
     link.addEventListener("click",()=>{
