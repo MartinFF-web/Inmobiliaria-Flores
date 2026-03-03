@@ -3,165 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contacto | Inmobiliaria Flores</title>
-<link rel="icon" type="image/png" href="favicon.png">
+<title>Propiedades | Inmobiliaria Flores</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+:root{
+    --negro:#222;
+    --gris:#666;
+    --rojo:#9b2c2c;
+    --arena:#f7f6f3;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
-    margin:0;
-    font-family:'Segoe UI', sans-serif;
-    background:#0a2a43;
-    color:white;
+    font-family:'Inter', sans-serif;
+    background:var(--arena);
+    color:var(--negro);
+    line-height:1.7;
 }
 
-/* HEADER */
-header{
+/* NAV */
+nav{
     position:fixed;
     width:100%;
     top:0;
     left:0;
-    padding:15px 40px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(10,42,67,0.95);
+    padding:25px 10%;
+    background:white;
+    border-bottom:1px solid #eee;
     z-index:1000;
 }
-
 .logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    text-decoration:none;
-}
-
-.logo img{
-    height:45px;
-}
-
-.logo h1{
-    margin:0;
+    font-family:'Noto Serif JP', serif;
     font-size:22px;
-    color:white;
+    letter-spacing:2px;
 }
-
 nav ul{
     list-style:none;
     display:flex;
-    gap:30px;
-    margin:0;
-    padding:0;
+    gap:40px;
 }
-
 nav a{
     text-decoration:none;
-    color:white;
-    font-weight:500;
-    transition:0.3s;
+    color:var(--negro);
+    font-size:14px;
+    letter-spacing:2px;
+}
+nav a.active{
+    color:var(--rojo);
 }
 
-nav a:hover{
-    color:#c59d5f;
-}
-
-/* HERO */
-.hero{
-    height:100vh;
-    background:linear-gradient(rgba(10,42,67,0.8), rgba(10,42,67,0.8)),
-    url('https://images.unsplash.com/photo-1507089947368-19c1da9775ae');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+/* HEADER SECTION */
+.header-section{
+    margin-top:120px;
+    padding:100px 10%;
     text-align:center;
-    padding:20px;
 }
-
-.hero h2{
+.header-section h1{
+    font-family:'Noto Serif JP', serif;
     font-size:42px;
     margin-bottom:20px;
 }
 
-.hero p{
-    max-width:600px;
-    margin-bottom:30px;
-    font-size:18px;
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:50px;
+    padding:0 10% 120px 10%;
 }
-
-/* FORM */
-form{
+.card{
+    background:white;
+    transition:0.4s;
+}
+.card img{
     width:100%;
-    max-width:500px;
+    height:260px;
+    object-fit:cover;
 }
-
-input, textarea{
-    width:100%;
-    padding:14px;
-    margin:10px 0;
-    border:none;
-    border-radius:5px;
-    font-size:15px;
+.card-content{
+    padding:35px;
 }
-
-button{
-    width:100%;
-    padding:14px;
-    background:#c59d5f;
-    border:none;
-    border-radius:5px;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.3s;
+.card-content h3{
+    font-family:'Noto Serif JP', serif;
 }
-
-button:hover{
-    background:#b8863b;
+.precio{
+    margin-top:20px;
+    color:var(--rojo);
+    font-weight:500;
+}
+.card:hover{
+    transform:translateY(-6px);
 }
 
 footer{
-    background:#081f32;
     text-align:center;
-    padding:25px;
+    padding:60px 20px;
+    font-size:14px;
+    color:var(--gris);
 }
 </style>
 </head>
-
 <body>
 
-<header>
-<a href="index.html" class="logo">
-<img src="logo.png">
-<h1>Inmobiliaria Flores</h1>
-</a>
-
 <nav>
-<ul>
-<li><a href="index.html">Inicio</a></li>
-<li><a href="propiedades.html">Propiedades</a></li>
-<li><a href="nosotros.html">Nosotros</a></li>
-<li><a href="contacto.html">Contacto</a></li>
-</ul>
+    <div class="logo">Inmobiliaria Flores</div>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="propiedades.html" </a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
 </nav>
-</header>
 
-<section class="hero">
-<h2>Contáctanos</h2>
-<p>Estamos listos para ayudarte a encontrar tu próxima propiedad.</p>
-
-<form>
-<input type="text" placeholder="Nombre completo" required>
-<input type="email" placeholder="Correo electrónico" required>
-<textarea rows="4" placeholder="Escribe tu mensaje..." required></textarea>
-<button type="submit">Enviar mensaje</button>
-</form>
-
+<section class="header-section">
+    <h1>Contacto</h1>
+    <h2>Correo Electronico: InmboFloresLtda@gmail.com</h2>
+        <h3>Todas las consultas o reclamos al Correo.</h3>
 </section>
+</div>
 
 <footer>
-© 2026 Inmobiliaria Flores | Todos los derechos reservados
+    © 2026 Inmobiliaria Flores
 </footer>
 
 </body>
