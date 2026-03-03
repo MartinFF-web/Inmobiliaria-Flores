@@ -3,268 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Página | Inmobiliaria Flores</title>
+<title>Nosotros | Inmobiliaria Flores</title>
 <link rel="icon" type="image/png" href="favicon.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
-    --negro:#222;
-    --gris:#666;
-    --rojo:#9b2c2c;
-    --arena:#f7f6f3;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
 
 body{
-    font-family:'Inter', sans-serif;
-    background:var(--arena);
-    color:var(--negro);
-    line-height:1.7;
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:#ffffff;
+    color:#0a2a43;
 }
 
-/* NAV */
-nav{
-    position:fixed;
-    width:100%;
-    top:0;
-    left:0;
+/* HEADER */
+header{
+    background:white;
+    padding:22px 60px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:25px 10%;
-    background:white;
-    border-bottom:1px solid #eee;
-    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,0.05);
 }
 
 .logo{
     display:flex;
     align-items:center;
-    gap:12px;
-    font-family:'Noto Serif JP', serif;
-    font-size:22px;
+    gap:14px;
+    text-decoration:none;
+}
+
+.logo img{
+    height:48px;
+}
+
+.logo h1{
+    margin:0;
+    font-size:24px;
     font-weight:600;
-    letter-spacing:2px;
+    color:#0a2a43;
 }
 
 nav ul{
     list-style:none;
     display:flex;
     gap:40px;
+    margin:0;
+    padding:0;
 }
 
 nav a{
     text-decoration:none;
-    color:var(--negro);
-    font-size:14px;
-    letter-spacing:2px;
+    color:#0a2a43;
+    font-weight:500;
     transition:0.3s;
 }
 
-nav a:hover,
-nav a.active{
-    color:var(--rojo);
-}
-
-.menu-toggle{
-    display:none;
-    font-size:26px;
-    cursor:pointer;
+nav a:hover{
+    color:#c59d5f;
 }
 
 /* HERO */
 .hero{
-    margin-top:100px;
-    height:90vh;
-    background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    background:linear-gradient(rgba(10,42,67,0.75), rgba(10,42,67,0.75)),
+    url('https://images.unsplash.com/photo-1560518883-ce09059eeffa');
+    background-size:cover;
+    background-position:center;
+    padding:180px 20px; /* MÁS AIRE COMO EL INDEX */
     text-align:center;
-    position:relative;
-}
-
-.hero-content{
-    max-width:700px;
-}
-
-.hero h1,
-.hero p{
-    color: var(--arena);
-    font-family:'Noto Serif JP', serif;
-}
-
-.hero h1{
-    font-size:48px;
-    font-weight:600;
-    letter-spacing:3px;
-}
-
-.hero p{
-    margin-top:20px;
-    font-weight:300;
-    font-size:18px;
-}
-
-.hero button{
-    margin-top:40px;
-    padding:12px 35px;
-    border:1px solid var(--negro);
-    background:transparent;
-    color:var(--negro);
-    cursor:pointer;
-    letter-spacing:2px;
-    transition:0.3s;
-}
-
-.hero button:hover{
-    background:var(--negro);
     color:white;
 }
 
-/* SECCIONES */
+.hero h2{
+    font-size:46px;
+    font-weight:600;
+    margin-bottom:30px;
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+    font-size:19px;
+    line-height:1.8;
+}
+
+/* SECCIÓN */
 .section{
-    padding:120px 10%;
+    padding:140px 20px; /* MISMO ESPACIADO GRANDE */
+    text-align:center;
 }
 
-.section-title{
-    font-family:'Noto Serif JP', serif;
-    font-size:30px;
-    margin-bottom:70px;
-    border-left:3px solid var(--rojo);
-    padding-left:15px;
+.section h3{
+    font-size:34px;
+    margin-bottom:35px;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:50px;
-}
-
-.card{
-    background:white;
-    transition:0.4s;
-}
-
-.card img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-}
-
-.card-content{
-    padding:35px;
-}
-
-.card-content h3{
-    font-family:'Noto Serif JP', serif;
-    margin-bottom:10px;
-}
-
-.precio{
-    margin-top:20px;
-    color:var(--rojo);
-    font-weight:500;
-}
-
-.card:hover{
-    transform:translateY(-6px);
+.section p{
+    max-width:850px;
+    margin:auto;
+    font-size:19px;
+    line-height:1.9;
+    color:#555;
 }
 
 /* FOOTER */
 footer{
+    background:#0a2a43;
+    color:white;
     text-align:center;
-    padding:60px 20px;
-    font-size:14px;
-    color:var(--gris);
+    padding:40px;
+    margin-top:80px;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-    nav ul{
-        position:absolute;
-        top:80px;
-        right:0;
-        background:white;
-        width:100%;
-        flex-direction:column;
-        align-items:center;
-        gap:30px;
-        padding:40px 0;
-        display:none;
-        border-top:1px solid #eee;
-    }
-    nav ul.active{
-        display:flex;
-    }
-    .menu-toggle{
-        display:block;
-    }
-    .hero h1{
-        font-size:34px;
-    }
-}
 </style>
 </head>
+
 <body>
 
-<nav>
-    <a href="index.html" class="logo">
-        <img src="logo.png" alt="Logo" style="height:45px;">
-        Inmobiliaria Flores
-    </a>
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-    <ul id="menu">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="propiedades.html">Propiedades</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-</nav>
+<header>
+<a href="index.html" class="logo">
+<img src="logo.png" alt="Logo Inmobiliaria Flores">
+<h1>Inmobiliaria Flores</h1>
+</a>
 
-<section class="hero" id="inicio">
-    <div class="hero-content">
-        <h1>Página Título</h1>
-        <p>Subtítulo o descripción</p>
-        <button onclick="document.getElementById('propiedades')?.scrollIntoView()">Explorar propiedades</button>
-    </div>
+<nav>
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="propiedades.html">Propiedades</a></li>
+<li><a href="nosotros.html">Nosotros</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Sobre Nosotros</h2>
+<p>
+En Inmobiliaria Flores trabajamos con compromiso, transparencia y excelencia,
+brindando asesoría personalizada para ayudarte a encontrar la propiedad ideal.
+</p>
 </section>
 
-<section class="section" id="propiedades">
-    <div class="section-title">Sección Principal</div>
-    <p>Contenido principal de la página. Aquí puedes poner lo que corresponda a esta sección.</p>
+<section class="section">
+<h3>Nuestra Visión</h3>
+<p>
+Ser una inmobiliaria reconocida por la confianza y calidad de servicio,
+acompañando a nuestros clientes en cada etapa del proceso de compra o arriendo.
+</p>
 </section>
 
 <footer>
-    © 2026 Inmobiliaria Flores — Diseño minimalista
+© 2026 Inmobiliaria Flores | Todos los derechos reservados
 </footer>
-
-<script>
-const toggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("menu");
-const links = document.querySelectorAll("nav a");
-
-toggle.addEventListener("click", () => menu.classList.toggle("active"));
-
-links.forEach(link=>{
-    link.addEventListener("click",()=>{
-        menu.classList.remove("active");
-        links.forEach(l=>l.classList.remove("active"));
-        link.classList.add("active");
-    });
-});
-</script>
 
 </body>
 </html>
