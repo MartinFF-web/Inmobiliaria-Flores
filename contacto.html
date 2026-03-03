@@ -1,29 +1,149 @@
-<section class="section" style="margin-top:120px;">
-    <div style="
-        max-width:600px;
-        margin-left:auto;
-        text-align:right;
-    ">
-        <h1 style="
-            font-family:'Noto Serif JP', serif;
-            font-size:42px;
-            margin-bottom:20px;
-        ">
-            Inmobiliaria Flores
-        </h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | Inmobiliaria Flores</title>
 
-        <p style="
-            font-size:18px;
-            margin-bottom:40px;
-            color:#444;
-        ">
-            Contacto
-        </p>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-        <p><strong>Email:</strong> contacto@inmobiliariaflores.cl</p>
-        <br>
-        <p><strong>Teléfono:</strong> +56 9 1234 5678</p>
-        <br>
-        <p><strong>Ubicación:</strong> Santiago, Chile</p>
+<style>
+:root{
+    --negro:#222;
+    --gris:#666;
+    --rojo:#9b2c2c;
+    --arena:#f7f6f3;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background:var(--arena);
+    color:var(--negro);
+    line-height:1.7;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 10%;
+    background:white;
+    border-bottom:1px solid #eee;
+    z-index:1000;
+}
+
+.logo{
+    font-family:'Noto Serif JP', serif;
+    font-size:22px;
+    letter-spacing:2px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:40px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--negro);
+    font-size:14px;
+    letter-spacing:2px;
+    transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:var(--rojo);
+}
+
+/* SECCIÓN */
+.section{
+    padding:120px 10%;
+    margin-top:100px;
+}
+
+.section-title{
+    font-family:'Noto Serif JP', serif;
+    font-size:30px;
+    margin-bottom:70px;
+    border-left:3px solid var(--rojo);
+    padding-left:15px;
+}
+
+/* CONTENIDO CONTACTO */
+.contacto-content{
+    max-width:600px;
+    font-size:17px;
+}
+
+.contacto-item{
+    margin-bottom:30px;
+}
+
+.contacto-item strong{
+    display:block;
+    margin-bottom:5px;
+    font-weight:500;
+}
+
+footer{
+    text-align:center;
+    padding:60px 20px;
+    font-size:14px;
+    color:var(--gris);
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">Inmobiliaria Flores</div>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="propiedades.html">Propiedades</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+    </ul>
+</nav>
+
+<section class="section">
+    <div class="section-title">Contacto</div>
+
+    <div class="contacto-content">
+
+        <div class="contacto-item">
+            <strong>Email</strong>
+            contacto@inmobiliariaflores.cl
+        </div>
+
+        <div class="contacto-item">
+            <strong>Teléfono</strong>
+            +56 9 1234 5678
+        </div>
+
+        <div class="contacto-item">
+            <strong>Ubicación</strong>
+            Santiago, Chile
+        </div>
+
     </div>
 </section>
+
+<footer>
+    © 2026 Inmobiliaria Flores — Diseño minimalista
+</footer>
+
+</body>
+</html>
