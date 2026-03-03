@@ -3,158 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nosotros | Inmobiliaria Flores</title>
-<link rel="icon" type="image/png" href="favicon.png">
+<title>Inmobiliaria Flores</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
-body{
-    margin:0;
-    font-family:'Poppins', sans-serif;
-    background:#ffffff;
-    color:#0a2a43;
+:root{
+    --negro:#222;
+    --gris:#666;
+    --rojo:#9b2c2c;
+    --arena:#f7f6f3;
 }
 
-/* HEADER */
-header{
-    background:white;
-    padding:22px 60px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background:var(--arena);
+    color:var(--negro);
+    line-height:1.7;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    box-shadow:0 3px 15px rgba(0,0,0,0.05);
+    padding:25px 10%;
+    background:white;
+    border-bottom:1px solid #eee;
+    z-index:1000;
 }
 
-.logo{
+.logo-container{
     display:flex;
     align-items:center;
-    gap:14px;
+    gap:12px;
     text-decoration:none;
+    color:var(--negro);
 }
 
-.logo img{
-    height:48px;
+.logo-container img{
+    height:38px;
 }
 
-.logo h1{
-    margin:0;
-    font-size:24px;
-    font-weight:600;
-    color:#0a2a43;
+.logo-container span{
+    font-family:'Noto Serif JP', serif;
+    font-size:18px;
+    letter-spacing:2px;
 }
 
 nav ul{
     list-style:none;
     display:flex;
     gap:40px;
-    margin:0;
-    padding:0;
 }
 
 nav a{
     text-decoration:none;
-    color:#0a2a43;
-    font-weight:500;
+    color:var(--negro);
+    font-size:14px;
+    letter-spacing:2px;
     transition:0.3s;
 }
 
-nav a:hover{
-    color:#c59d5f;
+nav a:hover,
+nav a.active{
+    color:var(--rojo);
 }
 
 /* HERO */
 .hero{
-    background:linear-gradient(rgba(10,42,67,0.75), rgba(10,42,67,0.75)),
-    url('https://images.unsplash.com/photo-1560518883-ce09059eeffa');
-    background-size:cover;
-    background-position:center;
-    padding:180px 20px; /* MÁS AIRE COMO EL INDEX */
+    margin-top:100px;
+    height:90vh;
+    background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    color:white;
 }
 
-.hero h2{
-    font-size:46px;
-    font-weight:600;
+.hero-content{
+    max-width:700px;
+}
+
+/* LOGO EN HERO */
+.hero-brand{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
     margin-bottom:30px;
 }
 
+.hero-brand img{
+    height:50px;
+}
+
+.hero-brand span{
+    font-family:'Noto Serif JP', serif;
+    font-size:22px;
+    letter-spacing:3px;
+}
+
+.hero h1{
+    font-family:'Noto Serif JP', serif;
+    font-size:48px;
+    font-weight:600;
+    letter-spacing:3px;
+}
+
 .hero p{
-    max-width:750px;
-    margin:auto;
-    font-size:19px;
-    line-height:1.8;
+    margin-top:20px;
+    font-weight:300;
+    font-size:18px;
+    color:#444;
 }
 
-/* SECCIÓN */
-.section{
-    padding:140px 20px; /* MISMO ESPACIADO GRANDE */
-    text-align:center;
+.hero button{
+    margin-top:40px;
+    padding:12px 35px;
+    border:1px solid var(--negro);
+    background:transparent;
+    cursor:pointer;
+    letter-spacing:2px;
+    transition:0.3s;
 }
 
-.section h3{
-    font-size:34px;
-    margin-bottom:35px;
-}
-
-.section p{
-    max-width:850px;
-    margin:auto;
-    font-size:19px;
-    line-height:1.9;
-    color:#555;
-}
-
-/* FOOTER */
-footer{
-    background:#0a2a43;
+.hero button:hover{
+    background:var(--negro);
     color:white;
-    text-align:center;
-    padding:40px;
-    margin-top:80px;
 }
 
+footer{
+    text-align:center;
+    padding:60px 20px;
+    font-size:14px;
+    color:var(--gris);
+}
+
+@media(max-width:768px){
+    nav ul{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero-brand{
+        flex-direction:column;
+    }
+}
 </style>
 </head>
-
 <body>
 
-<header>
-<a href="index.html" class="logo">
-<img src="logo.png" alt="Logo Inmobiliaria Flores">
-<h1>Inmobiliaria Flores</h1>
-</a>
-
 <nav>
-<ul>
-<li><a href="index.html">Inicio</a></li>
-<li><a href="propiedades.html">Propiedades</a></li>
-<li><a href="nosotros.html">Nosotros</a></li>
-<li><a href="contacto.html">Contacto</a></li>
-</ul>
+    <a href="index.html" class="logo-container">
+        <img src="logo.png" alt="Logo Inmobiliaria Flores">
+        <span>Inmobiliaria Flores</span>
+    </a>
+
+    <ul>
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="propiedades.html">Propiedades</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
 </nav>
-</header>
 
 <section class="hero">
-<h2>Sobre Nosotros</h2>
-<p>
-En Inmobiliaria Flores trabajamos con compromiso, transparencia y excelencia,
-brindando asesoría personalizada para ayudarte a encontrar la propiedad ideal.
-</p>
-</section>
+    <div class="hero-content">
 
-<section class="section">
-<h3>Nuestra Visión</h3>
-<p>
-Ser una inmobiliaria reconocida por la confianza y calidad de servicio,
-acompañando a nuestros clientes en cada etapa del proceso de compra o arriendo.
-</p>
+        <div class="hero-brand">
+            <img src="logo.png" alt="Logo Inmobiliaria Flores">
+            <span>Inmobiliaria Flores</span>
+        </div>
+
+        <h1>Equilibrio y Patrimonio</h1>
+        <p>Propiedades seleccionadas con visión y precisión.</p>
+
+        <button onclick="window.location.href='propiedades.html'">
+            Explorar propiedades
+        </button>
+
+    </div>
 </section>
 
 <footer>
-© 2026 Inmobiliaria Flores | Todos los derechos reservados
+    © 2026 Inmobiliaria Flores — Diseño minimalista
 </footer>
 
 </body>
