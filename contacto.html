@@ -4,145 +4,174 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contacto | Inmobiliaria Flores</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
 
 <style>
-:root{
-    --negro:#222;
-    --gris:#666;
-    --rojo:#9b2c2c;
-    --arena:#f7f6f3;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
-    font-family:'Inter', sans-serif;
-    background:var(--arena);
-    color:var(--negro);
-    line-height:1.7;
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background-color:#f4f6f9;
 }
 
-/* NAV */
-nav{
-    position:fixed;
-    width:100%;
-    top:0;
-    left:0;
+/* HEADER */
+header{
+    background:white;
+    padding:15px 40px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:25px 10%;
-    background:white;
-    border-bottom:1px solid #eee;
-    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
 .logo{
-    font-family:'Noto Serif JP', serif;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+}
+
+.logo img{
+    height:45px;
+}
+
+.logo h1{
+    margin:0;
     font-size:22px;
-    letter-spacing:2px;
+    color:#0a2a43;
 }
 
 nav ul{
     list-style:none;
     display:flex;
-    gap:40px;
+    gap:30px;
+    margin:0;
+    padding:0;
 }
 
 nav a{
     text-decoration:none;
-    color:var(--negro);
-    font-size:14px;
-    letter-spacing:2px;
+    color:#0a2a43;
+    font-weight:500;
     transition:0.3s;
 }
 
-nav a:hover,
-nav a.active{
-    color:var(--rojo);
+nav a:hover{
+    color:#c59d5f;
 }
 
-/* SECCIÓN */
-.section{
-    padding:120px 10%;
-    margin-top:100px;
-}
-
-.section-title{
-    font-family:'Noto Serif JP', serif;
-    font-size:30px;
-    margin-bottom:70px;
-    border-left:3px solid var(--rojo);
-    padding-left:15px;
-}
-
-/* CONTENIDO CONTACTO */
-.contacto-content{
-    max-width:600px;
-    font-size:17px;
-}
-
-.contacto-item{
-    margin-bottom:30px;
-}
-
-.contacto-item strong{
-    display:block;
-    margin-bottom:5px;
-    font-weight:500;
-}
-
-footer{
+/* HERO */
+.hero{
+    background:linear-gradient(rgba(10,42,67,0.7), rgba(10,42,67,0.7)),
+    url('https://images.unsplash.com/photo-1507089947368-19c1da9775ae');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    padding:100px 20px;
     text-align:center;
-    padding:60px 20px;
-    font-size:14px;
-    color:var(--gris);
+}
+
+.hero h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+/* FORM SECTION */
+.section{
+    padding:80px 20px;
+    display:flex;
+    justify-content:center;
+}
+
+.form-box{
+    background:white;
+    padding:40px;
+    width:100%;
+    max-width:600px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.form-box h3{
+    margin-top:0;
+    color:#0a2a43;
+    text-align:center;
+}
+
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0 20px 0;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    background:#0a2a43;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#c59d5f;
+}
+
+/* FOOTER */
+footer{
+    background:#0a2a43;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:50px;
 }
 </style>
 </head>
+
 <body>
 
+<header>
+<a href="index.html" class="logo">
+<img src="logo.png">
+<h1>Inmobiliaria Flores</h1>
+</a>
+
 <nav>
-    <div class="logo">Inmobiliaria Flores</div>
-    <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="propiedades.html">Propiedades</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="contacto.html" class="active">Contacto</a></li>
-    </ul>
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="propiedades.html">Propiedades</a></li>
+<li><a href="nosotros.html">Nosotros</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul>
 </nav>
+</header>
+
+<section class="hero">
+<h2>Contáctanos</h2>
+</section>
 
 <section class="section">
-    <div class="section-title">Contacto</div>
+<div class="form-box">
+<h3>Envíanos un mensaje</h3>
 
-    <div class="contacto-content">
+<form>
+<input type="text" placeholder="Nombre completo" required>
+<input type="email" placeholder="Correo electrónico" required>
+<input type="tel" placeholder="Teléfono">
+<textarea rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+<button type="submit">Enviar mensaje</button>
+</form>
 
-        <div class="contacto-item">
-            <strong>Email</strong>
-            contacto@inmobiliariaflores.cl
-        </div>
-
-        <div class="contacto-item">
-            <strong>Teléfono</strong>
-            +56 9 1234 5678
-        </div>
-
-        <div class="contacto-item">
-            <strong>Ubicación</strong>
-            Santiago, Chile
-        </div>
-
-    </div>
+</div>
 </section>
 
 <footer>
-    © 2026 Inmobiliaria Flores — Diseño minimalista
+© 2026 Inmobiliaria Flores | Todos los derechos reservados
 </footer>
 
 </body>
