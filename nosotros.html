@@ -3,155 +3,133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nosotros | Inmobiliaria Flores</title>
-<link rel="icon" type="image/png" href="favicon.png">
+<title>Propiedades | Inmobiliaria Flores</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
+:root{
+    --negro:#222;
+    --gris:#666;
+    --rojo:#9b2c2c;
+    --arena:#f7f6f3;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
-    margin:0;
-    font-family:'Poppins', sans-serif;
-    background:#ffffff;
-    color:#0a2a43;
+    font-family:'Inter', sans-serif;
+    background:var(--arena);
+    color:var(--negro);
+    line-height:1.7;
 }
 
-/* HEADER */
-header{
-    background:white;
-    padding:22px 60px;
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    box-shadow:0 3px 15px rgba(0,0,0,0.05);
+    padding:25px 10%;
+    background:white;
+    border-bottom:1px solid #eee;
+    z-index:1000;
 }
-
 .logo{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    text-decoration:none;
+    font-family:'Noto Serif JP', serif;
+    font-size:22px;
+    letter-spacing:2px;
 }
-
-.logo img{
-    height:48px;
-}
-
-.logo h1{
-    margin:0;
-    font-size:24px;
-    font-weight:600;
-    color:#0a2a43;
-}
-
 nav ul{
     list-style:none;
     display:flex;
     gap:40px;
-    margin:0;
-    padding:0;
 }
-
 nav a{
     text-decoration:none;
-    color:#0a2a43;
+    color:var(--negro);
+    font-size:14px;
+    letter-spacing:2px;
+}
+nav a.active{
+    color:var(--rojo);
+}
+
+/* HEADER SECTION */
+.header-section{
+    margin-top:120px;
+    padding:100px 10%;
+    text-align:center;
+}
+.header-section h1{
+    font-family:'Noto Serif JP', serif;
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:50px;
+    padding:0 10% 120px 10%;
+}
+.card{
+    background:white;
+    transition:0.4s;
+}
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+.card-content{
+    padding:35px;
+}
+.card-content h3{
+    font-family:'Noto Serif JP', serif;
+}
+.precio{
+    margin-top:20px;
+    color:var(--rojo);
     font-weight:500;
-    transition:0.3s;
+}
+.card:hover{
+    transform:translateY(-6px);
 }
 
-nav a:hover{
-    color:#c59d5f;
-}
-
-/* HERO */
-.hero{
-   <section class="hero">
-<h2 style="color: var(--arena);">Título de la página</h2>
-<p style="color: var(--arena);">Texto descriptivo de la sección</p>
-</section>
-}
-
-.hero h2{
-    font-size:46px;
-    font-weight:600;
-    margin-bottom:30px;
-}
-
-.hero p{
-    max-width:750px;
-    margin:auto;
-    font-size:19px;
-    line-height:1.8;
-}
-
-/* SECCIÓN */
-.section{
-    padding:140px 20px; /* MISMO ESPACIADO GRANDE */
-    text-align:center;
-}
-
-.section h3{
-    font-size:34px;
-    margin-bottom:35px;
-}
-
-.section p{
-    max-width:850px;
-    margin:auto;
-    font-size:19px;
-    line-height:1.9;
-    color:#555;
-}
-
-/* FOOTER */
 footer{
-    background:#0a2a43;
-    color:white;
     text-align:center;
-    padding:40px;
-    margin-top:80px;
+    padding:60px 20px;
+    font-size:14px;
+    color:var(--gris);
 }
-
 </style>
 </head>
-
 <body>
 
-<header>
-<a href="index.html" class="logo">
-<img src="logo.png" alt="Logo Inmobiliaria Flores">
-<h1>Inmobiliaria Flores</h1>
-</a>
-
 <nav>
-<ul>
-<li><a href="index.html">Inicio</a></li>
-<li><a href="propiedades.html">Propiedades</a></li>
-<li><a href="nosotros.html">Nosotros</a></li>
-<li><a href="contacto.html">Contacto</a></li>
-</ul>
+    <div class="logo">Inmobiliaria Flores</div>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="propiedades.html" class="active">Propiedades</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
 </nav>
-</header>
 
-<section class="hero">
-<h2>Sobre Nosotros</h2>
-<p>
-En Inmobiliaria Flores trabajamos con compromiso, transparencia y excelencia,
-brindando asesoría personalizada para ayudarte a encontrar la propiedad ideal.
-</p>
+<section class="header-section">
+    <h1>Nosotros</h1>
+    <p>Empresa familiar</p>
+        <p>Mision de la empresa: Dar a conocer un abanico de propiedades dentro de gran santiago para ayudar tanto a los compradores como vendedores
+        asistiendolos en todo el proceso de compra y venta</p>
+    <p>Vision de la empresa-: Posicionarnos como una empresa reconocible a nivel regional por el buen trato, asistencia y profesionalismo</p>
 </section>
-
-<section class="section">
-<h3>Nuestra Visión</h3>
-<p>
-Ser una inmobiliaria reconocida por la confianza y calidad de servicio,
-acompañando a nuestros clientes en cada etapa del proceso de compra o arriendo.
-</p>
-</section>
+</div>
 
 <footer>
-© 2026 Inmobiliaria Flores | Todos los derechos reservados
+    © 2026 Inmobiliaria Flores
 </footer>
 
 </body>
