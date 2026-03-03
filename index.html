@@ -43,9 +43,21 @@ nav{
     z-index:1000;
 }
 
-.logo{
+.logo-container{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:var(--negro);
+}
+
+.logo-container img{
+    height:38px;
+}
+
+.logo-container span{
     font-family:'Noto Serif JP', serif;
-    font-size:22px;
+    font-size:18px;
     letter-spacing:2px;
 }
 
@@ -68,12 +80,6 @@ nav a.active{
     color:var(--rojo);
 }
 
-.menu-toggle{
-    display:none;
-    font-size:26px;
-    cursor:pointer;
-}
-
 /* HERO */
 .hero{
     margin-top:100px;
@@ -87,6 +93,25 @@ nav a.active{
 
 .hero-content{
     max-width:700px;
+}
+
+/* LOGO EN HERO */
+.hero-brand{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.hero-brand img{
+    height:50px;
+}
+
+.hero-brand span{
+    font-family:'Noto Serif JP', serif;
+    font-size:22px;
+    letter-spacing:3px;
 }
 
 .hero h1{
@@ -127,29 +152,15 @@ footer{
 
 @media(max-width:768px){
     nav ul{
-        position:absolute;
-        top:80px;
-        right:0;
-        background:white;
-        width:100%;
-        flex-direction:column;
-        align-items:center;
-        gap:30px;
-        padding:40px 0;
         display:none;
-        border-top:1px solid #eee;
-    }
-
-    nav ul.active{
-        display:flex;
-    }
-
-    .menu-toggle{
-        display:block;
     }
 
     .hero h1{
         font-size:34px;
+    }
+
+    .hero-brand{
+        flex-direction:column;
     }
 }
 </style>
@@ -157,9 +168,12 @@ footer{
 <body>
 
 <nav>
-    <div class="logo">Inmobiliaria Flores</div>
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-    <ul id="menu">
+    <a href="index.html" class="logo-container">
+        <img src="logo.png" alt="Logo Inmobiliaria Flores">
+        <span>Inmobiliaria Flores</span>
+    </a>
+
+    <ul>
         <li><a href="index.html" class="active">Inicio</a></li>
         <li><a href="propiedades.html">Propiedades</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
@@ -169,26 +183,25 @@ footer{
 
 <section class="hero">
     <div class="hero-content">
+
+        <div class="hero-brand">
+            <img src="logo.png" alt="Logo Inmobiliaria Flores">
+            <span>Inmobiliaria Flores</span>
+        </div>
+
         <h1>Equilibrio y Patrimonio</h1>
         <p>Propiedades seleccionadas con visión y precisión.</p>
+
         <button onclick="window.location.href='propiedades.html'">
             Explorar propiedades
         </button>
+
     </div>
 </section>
 
 <footer>
     © 2026 Inmobiliaria Flores — Diseño minimalista
 </footer>
-
-<script>
-const toggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("menu");
-
-toggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
-});
-</script>
 
 </body>
 </html>
