@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="favicon.png">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inmobiliaria Flores</title>
+<title>Propiedades | Inmobiliaria Flores</title>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -50,7 +50,6 @@ nav{
     align-items:center;
     gap:12px;
     text-decoration:none;
-    color:var(--negro);
 }
 
 .logo-container img{
@@ -61,6 +60,7 @@ nav{
     font-family:'Noto Serif JP', serif;
     font-size:18px;
     letter-spacing:2px;
+    color:var(--negro);
 }
 
 nav ul{
@@ -131,13 +131,45 @@ footer{
     font-size:14px;
     color:var(--gris);
 }
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    nav ul{
+        position:absolute;
+        top:80px;
+        right:0;
+        background:white;
+        width:100%;
+        flex-direction:column;
+        align-items:center;
+        gap:30px;
+        padding:40px 0;
+        display:none;
+        border-top:1px solid #eee;
+    }
+    nav ul.active{
+        display:flex;
+    }
+    .menu-toggle{
+        display:block;
+    }
+}
+.menu-toggle{
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+}
 </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">Inmobiliaria Flores</div>
-    <ul>
+    <a href="index.html" class="logo-container">
+        <img src="logo.png" alt="Logo">
+        <span>Inmobiliaria Flores</span>
+    </a>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul id="menu">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="propiedades.html" class="active">Propiedades</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
@@ -173,6 +205,22 @@ footer{
 <footer>
     © 2026 Inmobiliaria Flores — Diseño minimalista
 </footer>
+
+<script>
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+const links = document.querySelectorAll("nav a");
+
+toggle.addEventListener("click", () => menu.classList.toggle("active"));
+
+links.forEach(link=>{
+    link.addEventListener("click",()=>{
+        menu.classList.remove("active");
+        links.forEach(l=>l.classList.remove("active"));
+        link.classList.add("active");
+    });
+});
+</script>
 
 </body>
 </html>
