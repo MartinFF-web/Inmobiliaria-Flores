@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Propiedades | Inmobiliaria Flores</title>
+<title>Inmobiliaria Flores</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -14,7 +16,13 @@
     --rojo:#9b2c2c;
     --arena:#f7f6f3;
 }
-*{margin:0;padding:0;box-sizing:border-box;}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
     font-family:'Inter', sans-serif;
     background:var(--arena);
@@ -36,22 +44,40 @@ nav{
     border-bottom:1px solid #eee;
     z-index:1000;
 }
-.logo{
+
+.logo-container{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:var(--negro);
+}
+
+.logo-container img{
+    height:38px;
+}
+
+.logo-container span{
     font-family:'Noto Serif JP', serif;
-    font-size:22px;
+    font-size:18px;
     letter-spacing:2px;
 }
+
 nav ul{
     list-style:none;
     display:flex;
     gap:40px;
 }
+
 nav a{
     text-decoration:none;
     color:var(--negro);
     font-size:14px;
     letter-spacing:2px;
+    transition:0.3s;
 }
+
+nav a:hover,
 nav a.active{
     color:var(--rojo);
 }
